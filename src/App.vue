@@ -1,17 +1,18 @@
 <template>
-  <div id="app">
-    <Vecharts :option="tdata" />
+  <div id="app"> 
     <ETable/>
+
+
   </div>
 </template>
 
 <script>
-import Vecharts from "@/components/Vecharts";
+
 import ETable from "@/components/ETable"
 export default {
   name: "App",
   components: {
-    Vecharts,
+
     ETable
   },
   data() {
