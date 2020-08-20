@@ -1,8 +1,9 @@
-import service from '@/utils/http'
-import base from '@/utils/base'
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {getOneCountryData} from '@/api'
+
+Vue.use(Vuex)
 
 const state = {
     countryDataList:[],
@@ -30,3 +31,11 @@ const actions = {
         })
     }
 }
+
+
+export const store = new  Vuex.Store({
+    state,
+    getters,
+    mutations,
+    actions
+})
