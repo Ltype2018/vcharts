@@ -1,8 +1,9 @@
 <template>
   <div id="app"> 
-    <ETable/>
-
-
+    <div class="Etable">
+   <ETable/>
+    </div>
+    
   </div>
 </template>
 
@@ -12,7 +13,6 @@ import ETable from "@/components/ETable"
 export default {
   name: "App",
   components: {
-
     ETable
   },
   data() {
@@ -113,5 +113,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.Etable{
+  width: 800px;
+  
 }
 </style>
