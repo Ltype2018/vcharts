@@ -1,4 +1,4 @@
-const BASE_URL = 'https://lab.isaaclin.cn/nCoV/api/area?latest=1'
+const BASE_URL = '/list.json'
 
 
 export default BASE_URL

@@ -26,11 +26,12 @@ export default {
   name: "ETable",
   computed:{
     countryData(){
-      return this.$store.getters.globalData
+      return this.$store.getters['origindata/globalData']
     }
+
   },
   created(){
-    this.$store.dispatch('getCountriesData')
+    this.$store.dispatch('origindata/getCountriesData')
   },
   methods:{
     formatterRate(row){
@@ -41,3 +42,4 @@ export default {
   }
 };
 </script>
+
