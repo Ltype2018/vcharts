@@ -9,3 +9,7 @@
 - 使用watch监听vuex数据变化，调用echarts方法
 - 在vuex 中对数据进行处理
 - 利用eharts 对数据进行统计展示
+
+##### 效果 
+![charts](https://github.com/Ltype2018/vcharts/blob/master/screenShoot/chartpicture.PNG)
+![table](https://github.com/Ltype2018/vcharts/blob/master/screenShoot/table.PNG)
