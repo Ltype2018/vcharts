@@ -10,27 +10,10 @@ export default {
   name: "Vecharts",
   computed: {
     ...mapState("origindata", ["isDataGet"]),
-    ...mapGetters("echartsdata",["tenCountryAndOtherCountryData"]),
-    mixPieoptionData() {
-        if(this.isDataGet){
-        let tempdata = this.tenCountryAndOtherCountryData.map(
-          ({ countryName, confirmedCount }) => {
-            return {
-              value: confirmedCount,
-              name: countryName,
-            };
-          }
-        );
-        pieoption.series[0].data = tempdata;
-        return pieoption;
-        }else{
-            return ({})
-        }
-
-    },
+    ...mapGetters("echartsdata", ["tenCountryAndOtherCountryData"]),
   },
-  watch:{
-      isDataGet(){
+  watch: {
+      'tenCountryAndOtherCountryData'(){
           if(this.isDataGet){
               this.initCharts()
           }
@@ -39,7 +22,16 @@ export default {
   methods: {
     initCharts() {
       let myChart = echarts.init(this.$refs.charts);
-      myChart.setOption(this.mixPieoptionData);
+      let tempdata = this.tenCountryAndOtherCountryData.map(
+        ({ countryName, confirmedCount }) => {
+          return {
+            value: confirmedCount,
+            name: countryName,
+          };
+        }
+      );
+      pieoption.series[0].data = tempdata;
+      myChart.setOption(pieoption);
     },
   },
 };

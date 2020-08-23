@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <template v-loading.fullscreen.lock="fullscreenLoading">
+    </template>
     <div class="Echarts">
       <Vecharts />
     </div>
@@ -11,7 +13,7 @@
 
 <script>
 import ETable from "@/components/ETable";
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import Vecharts from "@/components/Vecharts";
 export default {
   name: "App",
@@ -20,11 +22,21 @@ export default {
     Vecharts,
   },
   data() {
-    return {};
+    return {
+      fullscreenLoading:true
+    };
   },
   computed: {
     ...mapGetters("echartsdata", ["tenCountryAndOtherCountryData"]),
+    ...mapState("origindata",['isDataGet'])
   },
+  watch:{
+    'isDataGet'(){
+      if(this.isDataGet){
+        this.fullscreenLoading =  false
+      }
+    }
+  }
 };
 </script>
 
